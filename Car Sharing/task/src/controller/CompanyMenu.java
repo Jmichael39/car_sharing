@@ -29,12 +29,12 @@ public class CompanyMenu {
             System.out.println("\nThe car list is empty!\n");
             companyMenu(company);
         } else {
-            carList(cars);
+            printList(cars);
             companyMenu(company);
         }
     }
 
-    private static void carList(List<Car> cars) {
+    private static void printList(List<Car> cars) {
         System.out.println("\nCar list: ");
         int i = 1;
         for (Car car : cars) {
