@@ -29,12 +29,12 @@ public class CompanyMenu {
             System.out.println("\nThe car list is empty!\n");
             companyMenu(company);
         } else {
-            printList(cars);
+            printCarList(cars);
             companyMenu(company);
         }
     }
 
-    private static void printList(List<Car> cars) {
+    private static void printCarList(List<Car> cars) {
         System.out.println("\nCar list: ");
         int i = 1;
         for (Car car : cars) {
@@ -46,9 +46,8 @@ public class CompanyMenu {
 
     static void createCar(Company company) {
         System.out.println("\nEnter the car name:");
-        String name = sc.nextLine();
 
-        carDAO.addCar(new Car(0, name, company.getId()));
+        carDAO.addCar(new Car(0, sc.nextLine(), company.getId()));
         System.out.println("The car was added!\n");
         companyMenu(company);
     }

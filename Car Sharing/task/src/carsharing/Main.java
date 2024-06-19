@@ -1,10 +1,20 @@
 package carsharing;
 
-import static controller.MainMenu.run;
+import controller.MainMenu;
+import dao.*;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String DbName = args.length > 0 ? args[1] : "carsharing";
-        run(DbName);
+        // Dependency Injection setup (could use a framework like Spring)
+        String url = "jdbc:h2:tcp://localhost/~/test";
+        CompanyDAO companyDAO = new CompanyDAOImpl(url);
+        CarDAO carDAO = new CarDAOImpl(url);
+        CustomerDAO customerDAO = new CustomerDAOImpl(url);
+        Scanner sc = new Scanner(System.in);
+
+        MainMenu mainMenu = new MainMenu(sc, companyDAO, carDAO, customerDAO);
+        mainMenu.run();
     }
 }
