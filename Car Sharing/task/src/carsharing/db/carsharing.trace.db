@@ -1,0 +1,33 @@
+2024-06-19 12:24:57 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CUSTOMERS" not found; SQL statement:
+SELECT * FROM CUSTOMERS [42102-200]
+2024-06-19 12:26:31 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CUSTOMERS" not found; SQL statement:
+SELECT * FROM CUSTOMERS [42102-200]
+2024-06-19 13:43:15 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "1" for parameter "columnIndex" [90008-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:590)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3212)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3251)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:334)
+	at dao.CustomerDAOImpl.addCustomer(CustomerDAOImpl.java:82)
+	at controller.CustomerMenu.createCustomer(CustomerMenu.java:130)
+	at controller.MainMenu.mainMenu(MainMenu.java:42)
+	at controller.CustomerMenu.customerMainMenu(CustomerMenu.java:19)
+	at controller.MainMenu.mainMenu(MainMenu.java:41)
+	at controller.MainMenu.run(MainMenu.java:27)
+	at carsharing.Main.main(Main.java:8)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.invokeMain(MainMethodExecutor.java:160)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.lambda$launch$1(MainMethodExecutor.java:188)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
