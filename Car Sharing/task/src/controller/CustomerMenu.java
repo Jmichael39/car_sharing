@@ -7,6 +7,7 @@ import model.Customer;
 import java.util.List;
 
 import static controller.MainMenu.*;
+import static controller.ManagerMenu.listCompanies;
 
 public class CustomerMenu {
 
@@ -20,6 +21,10 @@ public class CustomerMenu {
             listCustomers(customers);
 
             int choice = Integer.parseInt(sc.nextLine());
+            if (choice == 0) {
+                System.out.println();
+                mainMenu();
+            }
             Customer customer = customers.get(choice - 1);
             if (choice == 0) {
                 mainMenu();
@@ -110,7 +115,7 @@ public class CustomerMenu {
         if (customer.getReturned()) {
             System.out.println("\nYou've returned a rented car!");
             customerMenu(customer);
-        } else if (customer.getRented_car_id() == 0){
+        } else if (customer.getRented_car_id() == 0) {
             System.out.println("\nYou didn't rent a car!");
             customerMenu(customer);
         } else {
@@ -123,7 +128,7 @@ public class CustomerMenu {
     private static void myRentedCar(Customer customer) {
         customer = updateCustomerStatus(customer);
 
-        if (customer.getRented_car_id() == 0){
+        if (customer.getRented_car_id() == 0) {
             System.out.println("\nYou didn't rent a car!");
             customerMenu(customer);
         } else {

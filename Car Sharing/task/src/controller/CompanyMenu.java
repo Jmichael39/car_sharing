@@ -6,6 +6,7 @@ import model.Company;
 import java.util.List;
 
 import static controller.MainMenu.*;
+import static controller.ManagerMenu.managerMenu;
 
 public class CompanyMenu {
 
